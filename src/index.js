@@ -26,15 +26,15 @@ function createChildKey(trieIndex) {
 // 0x9126dd5023eb9f711ca019aa6f2a247ebf911cae619396ff29471d84f402a760
 // 10281600
 // 0x566a5f52e343078ca4e1fd7ff39bd0930cd8311984d592b1709779215d5788bb
-// 10615383(todo:10886400)
-// 0x8d787dc440d65a82ed402b3686e2f97d3a6721cff34420856934ad1293820f6b
+// 10696812(todo:10886400)
+// 0xfe8b0ad1125c5b37ce48af2a9d40bf5ecfbb734aab3413bc70df2ae045c8226d
 
 async function main () {
     const wsProvider = new WsProvider(process.env.ENDPOINT || ENDPOINT);
     const api = await ApiPromise.create({ provider: wsProvider });
     const paraId = parseInt(process.env.PARAID || PARAID);
     const dumpJson = process.env.DUMP || DUMP;
-    const blockHash = "0x8d787dc440d65a82ed402b3686e2f97d3a6721cff34420856934ad1293820f6b"
+    const blockHash = "0xfe8b0ad1125c5b37ce48af2a9d40bf5ecfbb734aab3413bc70df2ae045c8226d"
 
     const fund = await api.query.crowdloan.funds.at(blockHash, paraId);
     const trieIndex = fund.unwrap().trieIndex;
